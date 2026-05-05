@@ -212,7 +212,7 @@
 &kp EXCL              &kp AT                &kp HASH              &kp LG(LS(N4))        &kp LG(LS(N5))                                           &kp KP_MULTIPLY  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_EQUAL
 &kp CARET             &kp SLASH             &kp PERCENT           &kp AMPERSAND         &trans                &trans      &kp LEFT_PARENTHESIS   &kp KP_PLUS      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_SLASH
 &kp LA(LG(NUMBER_1))  &kp LA(LG(NUMBER_2))  &kp LA(LG(NUMBER_3))  &kp LA(LG(NUMBER_4))  &kp LA(LG(NUMBER_6))  &trans      &kp RIGHT_PARENTHESIS  &kp KP_MINUS     &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD
-&trans                &trans                &trans                &trans                &trans                &trans      &trans                 &kp KP_NUMBER_0                                                     &trans
+&trans                &trans                &trans                &trans                &trans                &trans      &myComma               &kp KP_NUMBER_0                                                     &trans
             >;
         };
 

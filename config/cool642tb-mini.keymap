@@ -6,7 +6,7 @@
 #define MOUSE 4
 #define SCROLL 5
 #define NUM 6
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 80
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 140
 
 &mt {
     flavor = "tap-preferred";
@@ -98,7 +98,8 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
 
-            tap-ms = <20>;
+            /* 20ms から 12ms 程度へ短縮して連射速度を上げます */
+            tap-ms = <12>;
         };
 
         z_mt: z_mt {

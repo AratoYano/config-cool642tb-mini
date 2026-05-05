@@ -3,7 +3,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-
 #define MOUSE 4
 #define SCROLL 5
 #define NUM 6
@@ -18,14 +17,69 @@
     combos {
         compatible = "zmk,combos";
 
-        shift_tab {
+        lang1 {
+            bindings = <&kp LANG1>;
+            key-positions = <18 19>;
+        };
+
+        lang2 {
             bindings = <&kp LANG2>;
+            key-positions = <19 20>;
+        };
+
+        window_right {
+            bindings = <&kp LC(RIGHT_ARROW)>;
             key-positions = <12 13>;
         };
 
-        lang {
-            bindings = <&kp LANG1>;
-            key-positions = <18 19>;
+        window_left {
+            bindings = <&kp LC(LEFT_ARROW)>;
+            key-positions = <12 11>;
+        };
+
+        kakko1 {
+            bindings = <&myKakko1>;
+            key-positions = <7 6>;
+        };
+
+        kakko2 {
+            bindings = <&myKakko2>;
+            key-positions = <7 8>;
+        };
+
+        kakko3 {
+            bindings = <&myKakko3>;
+            key-positions = <8 9>;
+        };
+
+        question {
+            bindings = <&kp SLASH>;
+            key-positions = <31 32>;
+        };
+
+        under {
+            bindings = <&myUnder>;
+            key-positions = <30 31>;
+        };
+
+        semicoron {
+            bindings = <&kp LS(SEMI)>;
+            key-positions = <20 21>;
+        };
+
+        mission_control {
+            bindings = <&kp LC(UP_ARROW)>;
+            key-positions = <2 3>;
+        };
+
+        app_window {
+            bindings = <&kp LC(DOWN_ARROW)>;
+            key-positions = <25 24>;
+        };
+
+        combo_window_switcher {
+            bindings = <&alt_tab_stay>;
+            key-positions = <1 2>;
         };
     };
 
@@ -34,21 +88,111 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_DOWN_UP";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>,<&msc SCRL_DOWN>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+
             tap-ms = <20>;
         };
     };
 
+    macros {
+        window_slide: window_slide {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LA(LC(LG(RIGHT_ARROW)))>,
+                <&macro_wait_time 50>,
+                <&kp LA(LC(RET))>;
+
+            label = "WINDOW_SLIDE";
+        };
+
+        window_slide2: window_slide2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LA(LC(LG(LEFT_ARROW)))>,
+                <&macro_wait_time 50>,
+                <&kp LC(LA(R))>;
+
+            label = "WINDOW_SLIDE2";
+        };
+
+        myComma: myComma {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANG2>, <&macro_wait_time 15>, <&kp COMMA>;
+
+            label = "MYCOMMA";
+        };
+
+        myUnder: myUnder {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANG2>, <&macro_wait_time 15>, <&kp UNDER>;
+
+            label = "MYUNDER";
+        };
+
+        myKakko1: myKakko1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS>;
+            label = "MYKAKKO1";
+        };
+
+        myKakko2: myKakko2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET>;
+            label = "MYKAKKO2";
+        };
+
+        myKakko3: myKakkko3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOUBLE_QUOTES &kp DOUBLE_QUOTES>;
+            label = "MYKAKKKO3";
+        };
+
+        alt_tab_stay: alt_tab_stay {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp TAB>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "ALT_TAB_STAY";
+        };
+
+        Raycast: Raycast {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT &kp LEFT_GUI>,
+                <&macro_tap>,
+                <&kp SPACE>,
+                <&macro_release>,
+                <&kp LEFT_ALT &kp LEFT_GUI>;
+
+            label = "RAYCAST";
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&kp Q               &kp W       &kp E         &kp R         &kp T                                                    &kp Y        &kp U  &kp I      &kp O    &kp P
-&mt LEFT_WIN A      &kp S       &kp D         &lt 4 F       &kp G        &kp LC(Y)              &kp PRINTSCREEN      &kp H        &kp J  &lt 5 K    &kp L    &kp SEMICOLON
-&mt LEFT_CONTROL Z  &kp X       &kp C         &kp V         &kp B        &kp LC(Z)              &kp ESC              &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp TAB             &kp C_MUTE  &kp LEFT_GUI  &kp LEFT_ALT  &lt 2 SPACE  &mt LSHIFT DELETE      &mt RSHFT BACKSPACE  &lt 1 ENTER                             &kp F4
+&kp Q             &kp W   &kp E      &kp R         &kp T                                            &kp Y          &kp U  &kp I    &kp O      &kp P
+&mt LCTRL A       &kp S   &kp D      &lt 2 F       &kp G         &kp LS(NUMBER_2)      &mo 6        &kp H          &kp J  &lt 5 K  &kp L      &kp RET
+&mt LEFT_SHIFT Z  &kp X   &kp C      &kp V         &kp B         &mo 1                 &mkp MB4     &kp SEMICOLON  &kp N  &kp M    &kp COMMA  &mt RSHIFT PERIOD
+&kp LEFT_SHIFT    &trans  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &kp SPACE             &lt 2 MINUS  &lt 3 SPACE                               &kp ESCAPE
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -56,28 +200,28 @@
 
         FUNCTION {
             bindings = <
-&kp N1    &kp N2     &kp N3     &kp N4     &kp N5                              &kp N6     &kp N7    &kp N8    &kp N9        &kp N0
-&kp PLUS  &kp MINUS  &kp ASTRK  &kp SLASH  &kp EQUAL  &kp UNDER      &kp HOME  &kp ENTER  &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT
-&kp F1    &kp F2     &kp F3     &kp F4     &kp F5     &trans         &trans    &kp F6     &kp F7    &kp F8    &kp F9        &kp F10
-&trans    &trans     &trans     &trans     &trans     &trans         &trans    &trans                                       &kp F11
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5                      &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &kp F11
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &kp F12
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
 
         NUM {
             bindings = <
-&kp LS(EXCL)  &kp AT        &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)                              &kp CARET    &kp AMPERSAND  &kp LS(UNDER)  &kp TILDE     &kp MINUS
-&kp SQT       &kp LS(LBRC)  &kp LBKT       &kp LS(LPAR)  &kp LS(DQT)    &kp LS(LT)      &kp LS(GT)  &kp LS(DQT)  &kp LS(RPAR)   &kp RBKT       &kp LS(RBRC)  &kp SQT
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3  &bt BT_SEL 4   &trans          &trans      &trans       &trans         &trans         &kp PIPE      &kp BACKSLASH
-&bt BT_CLR    &trans        &trans         &trans        &trans         &trans          &trans      &trans                                                   &trans
+&kp EXCL              &kp AT                &kp HASH              &kp LG(LS(N4))        &kp LG(LS(N5))                                           &kp KP_MULTIPLY  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_EQUAL
+&kp CARET             &kp SLASH             &kp PERCENT           &kp AMPERSAND         &trans                &trans      &kp LEFT_PARENTHESIS   &kp KP_PLUS      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_SLASH
+&kp LA(LG(NUMBER_1))  &kp LA(LG(NUMBER_2))  &kp LA(LG(NUMBER_3))  &kp LA(LG(NUMBER_4))  &kp LA(LG(NUMBER_6))  &trans      &kp RIGHT_PARENTHESIS  &kp KP_MINUS     &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD
+&trans                &trans                &trans                &trans                &trans                &trans      &trans                 &kp KP_NUMBER_0                                                     &trans
             >;
         };
 
         ARROW {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&kp ESCAPE         &kp LG(NUMBER_2)      &kp LG(NUMBER_3)       &kp LG(NUMBER_7)      &kp LG(LS(LEFT_BRACKET))                               &kp LA(LC(RET))  &trans                  &kp UP_ARROW    &kp LG(NUMBER_0)         &kp BACKSPACE
+&kp TAB            &kp LG(LA(NUMBER_2))  &kp LG(LA(NUMBER_3))   &kp LG(LA(NUMBER_7))  &kp LG(LS(RIGHT_BRACKET))  &trans      &window_slide2  &kp LG(EQUAL)    &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp C_VOL_UP
+&kp LC(LA(LG(F)))  &trans                &kp LS(LA(LC(LG(C))))  &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)      &trans      &window_slide   &kp LG(MINUS)    &kp LA(LC(LEFT_ARROW))  &kp LA(LC(R))   &kp LA(LC(RIGHT_ARROW))  &kp C_VOL_DN
+&trans             &trans                &trans                 &trans                &Raycast                   &trans      &trans          &trans                                                                            &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -103,10 +247,10 @@
 
         layer_6 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans        &trans        &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans        &trans        &trans        &trans        &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                  &bt BT_CLR_ALL
             >;
         };
 

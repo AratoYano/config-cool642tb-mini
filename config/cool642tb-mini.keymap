@@ -26,12 +26,12 @@
         compatible = "zmk,combos";
 
         lang1 {
-            bindings = <&kp LANG1>;
+            bindings = <&to 0 &kp LANG1>;
             key-positions = <18 19>;
         };
 
         lang2 {
-            bindings = <&kp LANG2>;
+            bindings = <&to 0 &kp LANG2>;
             key-positions = <19 20>;
         };
 

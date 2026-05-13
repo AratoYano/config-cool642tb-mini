@@ -233,6 +233,13 @@
             bindings = <&to 0 &kp LANG2>;
             label = "TOLAYER0_LANG2";
         };
+
+        to_layer_0: to_layer_0 {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            label = "TO_LAYER_0";
+        };
     };
 
     keymap {
@@ -280,10 +287,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans  &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &trans  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &trans
+&to_layer_0 Q           &to_layer_0 W  &to_layer_0 E      &to_layer_0 R         &to_layer_0 T                                                   &to_layer_0 Y      &to_layer_0 U  &to_layer_0 I  &to_layer_0 O      &to_layer_0 P
+&to_layer_0 A           &to_layer_0 S  &to_layer_0 D      &to_layer_0 F         &to_layer_0 G         &trans                 &trans             &to_layer_0 H      &mkp MB1       &to_layer_0 K  &mkp MB2           &to_layer_0 ENTER
+&to_layer_0 Z           &to_layer_0 X  &to_layer_0 C      &to_layer_0 V         &to_layer_0 B         &trans                 &trans             &to_layer_0 SEMI   &to_layer_0 N  &to_layer_0 M  &to_layer_0 COMMA  &to_layer_0 PERIOD
+&to_layer_0 LEFT_SHIFT  &trans         &to_layer_0 LCTRL  &to_layer_0 LEFT_ALT  &to_layer_0 LEFT_GUI  &to_layer_0 SPACE      &to_layer_0 MINUS  &to_layer_0 SPACE                                                   &to_layer_0 ESCAPE
             >;
         };
 

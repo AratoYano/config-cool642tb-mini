@@ -1,4 +1,4 @@
-#include <behaviors.dtsi>
+jjjjjjjjj#include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
@@ -137,15 +137,14 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            /* ホールド時は Layer 3 を開きつつマウスをオフにするマクロを呼ぶ */
-            /* タップ時は通常のキー（SPACE）を送る */
+            /* ホールド時にパラメータ付きマクロを呼び出し、タップで通常のキーを送る */
             bindings = <&mo_off>, <&kp>; 
         };
 
-        /* ホールド時に「Layer 3移動」と「マウス解除」を同時に行うヘルパー */
+        /* 修正ポイント: compatible を one-param に変更 */
         mo_off: mo_off {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <1>; // レイヤー番号を受け取る
+            compatible = "zmk,behavior-macro-one-param"; 
+            #binding-cells = <1>; 
             bindings = <&to 0>, <&macro_param_1to1>, <&mo MACRO_PLACEHOLDER>;
             label = "MO_OFF";
         };

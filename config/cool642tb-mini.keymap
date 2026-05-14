@@ -130,23 +130,20 @@ jjjjjjjjj#include <behaviors.dtsi>
             bindings = <&kp>, <&kp>;
         };
 
-        /* behaviors セクションに追加 */
+        /* 親指用のカスタムHold-Tap */
         lt_mouse_off: lt_mouse_off {
             compatible = "zmk,behavior-hold-tap";
-            label = "LT_MOUSE_OFF";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            /* ホールド時にパラメータ付きマクロを呼び出し、タップで通常のキーを送る */
-            bindings = <&mo_off>, <&kp>; 
+            bindings = <&mo_off>, <&kp>;
         };
 
-        /* 修正ポイント: compatible を one-param に変更 */
+        /* 引数(レイヤー番号)を受け取ってマウスを解除してから移動するマクロ */
         mo_off: mo_off {
-            compatible = "zmk,behavior-macro-one-param"; 
-            #binding-cells = <1>; 
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
             bindings = <&to 0>, <&macro_param_1to1>, <&mo MACRO_PLACEHOLDER>;
-            label = "MO_OFF";
         };
     };
 

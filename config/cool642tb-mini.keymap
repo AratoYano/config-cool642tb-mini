@@ -130,30 +130,6 @@
             require-prior-idle-ms = <150>;
             bindings = <&kp>, <&kp>;
         };
-
-        /* 親指用のカスタムHold-Tap */
-        lt_mouse_off: lt_mouse_off {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&mo_off>, <&kp>;
-        };
-
-        /* 引数(レイヤー番号)を受け取ってマウスを解除してから移動するマクロ */
-        mo_off: mo_off {
-    compatible = "zmk,behavior-macro-one-param";
-    #binding-cells = <1>;
-    wait-ms = <0>;
-    tap-ms = <0>;
-    bindings 
-        = <&macro_tap &tog 4>           /* マウスレイヤー(4)をトグルでOFFにする */
-        , <&macro_param_1to1>
-        , <&macro_press &mo MACRO_PLACEHOLDER> /* Layer 3 をプレス（ホールド開始） */
-        , <&macro_pause_for_release>    /* 指を離すまで待機 */
-        , <&macro_param_1to1>
-        , <&macro_release &mo MACRO_PLACEHOLDER>; /* 指を離したら Layer 3 をリリース */
-};
     };
 
     macros {
@@ -275,7 +251,7 @@
 &kp Q               &kp W   &kp E      &kp R         &kp T                                            &kp Y          &kp U  &kp I    &kp O      &kp P
 &a_mt LCTRL A       &kp S   &kp D      &lt 2 F       &kp G         &kp LS(NUMBER_2)      &mo 6        &kp H          &kp J  &lt 5 K  &kp L      &kp RET
 &z_mt LEFT_SHIFT Z  &kp X   &kp C      &kp V         &kp B         &mo 1                 &mkp MB4     &kp SEMICOLON  &kp N  &kp M    &kp COMMA  &mt RSHIFT PERIOD
-&kp LEFT_SHIFT      &trans  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &kp SPACE             &lt 2 MINUS  &lt_mouse_off 3 SPACE                               &kp ESCAPE
+&kp LEFT_SHIFT      &trans  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &kp SPACE             &lt 2 MINUS  &lt 3 SPACE                               &kp ESCAPE
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -315,7 +291,7 @@
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans  &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &trans  &mkp MB2  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &lt 3 SPACE                              &trans
             >;
         };
 

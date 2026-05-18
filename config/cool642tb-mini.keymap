@@ -6,7 +6,9 @@
 #define MOUSE 1
 #define SCROLL 5
 #define NUM 6
+
 #undef ZMK_POINTING_DEFAULT_SCRL_VAL
+
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 140
 
 &mt {
@@ -78,7 +80,7 @@
 
         mission_control {
             bindings = <&kp LC(UP_ARROW)>;
-            key-positions = <2 3>;
+            key-positions = <>;
         };
 
         app_window {
@@ -88,7 +90,7 @@
 
         combo_window_switcher {
             bindings = <&alt_tab_stay>;
-            key-positions = <1 2>;
+            key-positions = <>;
         };
     };
 
@@ -248,10 +250,10 @@
 
         default_layer {
             bindings = <
-&kp Q               &kp W   &kp E      &kp R         &kp T                                            &kp Y          &kp U  &kp I    &kp O      &kp P
-&a_mt LCTRL A       &kp S   &kp D      &lt 2 F       &kp G         &kp LS(NUMBER_2)      &mo 6        &kp H          &kp J  &lt 5 K  &kp L      &kp RET
-&z_mt LEFT_SHIFT Z  &kp X   &kp C      &kp V         &kp B         &mo 1                 &mkp MB4     &kp SEMICOLON  &kp N  &kp M    &kp COMMA  &mt RSHIFT PERIOD
-&kp LEFT_SHIFT      &trans  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &kp SPACE             &lt 2 MINUS  &lt 3 SPACE                               &kp ESCAPE
+&kp Q               &kp W   &kp E      &kp R         &kp T                                     &kp Y          &kp U  &kp I    &kp O      &kp P
+&a_mt LCTRL A       &kp S   &kp D      &lt 2 F       &kp G         &trans         &mo 6        &kp H          &kp J  &lt 5 K  &kp L      &kp RET
+&z_mt LEFT_SHIFT Z  &kp X   &kp C      &kp V         &kp B         &mo 4          &mkp MB4     &kp SEMICOLON  &kp N  &kp M    &kp COMMA  &mt RSHIFT PERIOD
+&kp LEFT_SHIFT      &trans  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &kp SPACE      &lt 2 MINUS  &lt 3 SPACE                               &kp ESCAPE
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -288,10 +290,10 @@
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans  &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &trans
+&trans  &trans  &trans  &trans  &kp F12                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans   &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans   &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans   &trans      &trans  &trans                          &trans
             >;
         };
 

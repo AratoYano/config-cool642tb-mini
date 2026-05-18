@@ -256,7 +256,7 @@
 &kp LEFT_SHIFT      &trans  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &kp SPACE      &lt 2 MINUS  &lt 3 SPACE                               &kp ESCAPE
             >;
 
-            sensor-bindings = <&encoder_msc_down_up>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         MOUSE {

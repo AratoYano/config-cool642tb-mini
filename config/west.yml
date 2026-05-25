@@ -4,19 +4,35 @@ manifest:
       url-base: https://github.com/zmkfirmware
 
   projects:
+    # 1. ZMK本体（cormoran版）
     - name: zmk
       url: https://github.com/cormoran/zmk
       revision: v0.3-branch+dya
-      # ⭕ シンプルな指定に戻し、構文エラー（Malformed）を回避します
-      import: app/west.yml
+      # ⭕ importを「app」に変更し、不要な追加ウィジェットの自動巻き込みを遮断します
+      import: app
 
-    # ⭕ PMW3610センサー用の最新ZIP（Input Processor）対応ドライバを直接引き込み
+    # 2. PMW3610最新ドライバ（直接指定）
     - name: zmk-driver-pmw3610
       url: https://github.com/inorichi/zmk-driver-pmw3610
       revision: main
 
-    # ⭕ 本来エラーを引き起こす原因だったwidgetを「ダミーの公開URL」で上書きすることで
-    # cormoran版ZMK本体からの認証要求を完全に中和（ブロック）します
-    - name: zmk-rgbled-widget
-      url: https://github.com/cormoran/zmk-rgbled-widget
+    # 3. ZMK Studio連携用モジュール群（すべて公開URL直接指定にフラット化）
+    - name: zmk-module-ble-management
+      url: https://github.com/cormoran/zmk-module-ble-management
+      revision: main
+
+    - name: zmk-module-battery-history
+      url: https://github.com/cormoran/zmk-module-battery-history
+      revision: main
+
+    - name: zmk-module-settings-rpc
+      url: https://github.com/cormoran/zmk-module-settings-rpc
+      revision: main
+
+    - name: zmk-module-runtime-input-processor
+      url: https://github.com/cormoran/zmk-module-runtime-input-processor
+      revision: main
+
+    - name: zmk-behavior-runtime-sensor-rotate
+      url: https://github.com/cormoran/zmk-behavior-runtime-sensor-rotate
       revision: main

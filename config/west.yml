@@ -8,11 +8,10 @@ manifest:
     - name: zmk
       url: https://github.com/cormoran/zmk
       revision: v0.3-branch+dya
-      # ⭕ import行を完全に削除しました。これで「他人のwest.yml」の隠れた認証ルートを完全にシャットアウトします。
 
-    # 2. PMW3610最新ドライバ（直接指定）
-    - name: zmk-driver-pmw3610
-      url: https://github.com/inorichi/zmk-driver-pmw3610
+    # 2. PMW3610最新ドライバ（petejohanson氏の現存する正しいURLへ修正）
+    - name: zmk-pmw3610-driver
+      url: https://github.com/petejohanson/zmk-pmw3610-driver
       revision: main
 
     # 3. ZMK Studio連携用モジュール群（すべて公開URL直接指定）
@@ -20,20 +19,14 @@ manifest:
       url: https://github.com/cormoran/zmk-module-ble-management
       revision: main
 
-    # ※バッテリー履歴モジュールは、cool642tb-miniの現在の構成には組み込まれていない（conf等で要求されない）ため、
-    # 依存関係をシンプルにしてビルドエラーを防ぐために、あえてここに記述しません（これで正解です）。
-
-    # 4. 設定のリアルタイム変更（RPC）に必須なモジュール
     - name: zmk-module-settings-rpc
       url: https://github.com/cormoran/zmk-module-settings-rpc
       revision: main
 
-    # 5. 入力プロセッサ（ZIPシステム）の動作に必要なモジュール
     - name: zmk-module-runtime-input-processor
       url: https://github.com/cormoran/zmk-module-runtime-input-processor
       revision: main
 
-    # 6. エンコーダーのローテート追従に必要なモジュール
     - name: zmk-behavior-runtime-sensor-rotate
       url: https://github.com/cormoran/zmk-behavior-runtime-sensor-rotate
       revision: main

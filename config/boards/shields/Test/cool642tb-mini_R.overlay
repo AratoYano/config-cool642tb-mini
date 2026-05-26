@@ -24,6 +24,9 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
+        input-processors = <
+            &zip_temp_layer 1 1000
+        >;
     };
 
     input_processors {
@@ -42,6 +45,10 @@
             type = <INPUT_EV_REL>;
             codes = <INPUT_REL_WHEEL>;
             track-remainders;
+        };
+
+        &zip_temp_layer {
+            require-prior-idle-ms = <400>;
         };
     };
 };

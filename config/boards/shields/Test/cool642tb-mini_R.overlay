@@ -41,8 +41,14 @@
 };
 
 &zip_temp_layer {
-            require-prior-idle-ms = <400>;
+    require-prior-idle-ms = <400>;
+
+    excluded-positions = <
+        18  // J 左クリック
+        20  // L 右クリック
+    >;
 };
+
 / {
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";

@@ -32,12 +32,14 @@
             bindings = <&toLayer0_lang1>;
             key-positions = <18 19>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <120>;
         };
 
         lang2 {
             bindings = <&toLayer0_lang2>;
             key-positions = <19 20>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <120>;
         };
 
         window_right {

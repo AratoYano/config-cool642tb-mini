@@ -27,9 +27,9 @@ manifest:
       remote: cormoran
       revision: main
 
-    - name: zmk-module-battery-history
-      remote: cormoran
-      revision: main
+    #- name: zmk-module-battery-history
+    #  remote: cormoran
+    #  revision: main
 
     - name: zmk-module-settings-rpc
       remote: cormoran

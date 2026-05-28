@@ -25,6 +25,10 @@
     };
 };
 
+&zip_temp_layer {
+    require-prior-idle-ms = <400>;
+};
+
 &default_transform {
     col-offset = <6>;
 };
@@ -40,10 +44,13 @@
 };
 
 / {
-    trackball_listener {
+    trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
+        input-processors = <
+            &zip_temp_layer 1 1000
+        >;
     };
 };
 

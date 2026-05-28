@@ -55,11 +55,15 @@
         kakko1 {
             bindings = <&myKakko1>;
             key-positions = <7 6>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <120>;
         };
 
         kakko2 {
             bindings = <&myKakko2>;
             key-positions = <7 8>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <120>;
         };
 
         kakko3 {

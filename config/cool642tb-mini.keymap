@@ -54,14 +54,14 @@
 
         kakko1 {
             bindings = <&myKakko1>;
-            key-positions = <7 6>;
+            key-positions = <>;
             timeout-ms = <30>;
             require-prior-idle-ms = <120>;
         };
 
         kakko2 {
             bindings = <&myKakko2>;
-            key-positions = <7 8>;
+            key-positions = <>;
             timeout-ms = <30>;
             require-prior-idle-ms = <120>;
         };

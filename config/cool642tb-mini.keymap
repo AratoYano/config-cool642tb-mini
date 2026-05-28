@@ -54,14 +54,14 @@
 
         kakko1 {
             bindings = <&myKakko1>;
-            key-positions = <>;
+            key-positions = <23 24>;
             timeout-ms = <30>;
             require-prior-idle-ms = <120>;
         };
 
         kakko2 {
             bindings = <&myKakko2>;
-            key-positions = <>;
+            key-positions = <24 25>;
             timeout-ms = <30>;
             require-prior-idle-ms = <120>;
         };
@@ -93,7 +93,7 @@
 
         app_window {
             bindings = <&kp LC(DOWN_ARROW)>;
-            key-positions = <25 24>;
+            key-positions = <>;
         };
 
         combo_window_switcher {

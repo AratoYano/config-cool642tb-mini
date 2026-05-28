@@ -23,21 +23,6 @@
             codes = <INPUT_REL_WHEEL>;
             track-remainders;
         };
-
-        zip_xy_to_scroll_mapper: zip_xy_to_scroll_mapper {
-            compatible = "zmk,input-processor-code-map";
-            #input-processor-cells = <0>;
-
-            input-codes = <
-                INPUT_REL_X
-                INPUT_REL_Y
-            >;
-
-            output-codes = <
-                INPUT_REL_HWHEEL
-                INPUT_REL_WHEEL
-            >;
-        };
     };
 };
 

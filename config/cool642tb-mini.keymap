@@ -53,12 +53,12 @@
 
         kakko1 {
             bindings = <&myKakko1>;
-            key-positions = <23 24>;
+            key-positions = <7 6>;
         };
 
         kakko2 {
             bindings = <&myKakko2>;
-            key-positions = <25 24>;
+            key-positions = <7 8>;
         };
 
         kakko3 {

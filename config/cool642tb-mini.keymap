@@ -78,17 +78,17 @@
 
         semicoron {
             bindings = <&kp LS(SEMI)>;
-            key-positions = <20 21>;
-        };
-
-        mission_control {
-            bindings = <&kp LC(UP_ARROW)>;
             key-positions = <>;
         };
 
-        app_window {
-            bindings = <&kp LC(DOWN_ARROW)>;
-            key-positions = <>;
+        sana {
+            bindings = <&kp LA(SPACE)>;
+            key-positions = <24 23>;
+        };
+
+        raycast {
+            bindings = <&Raycast>;
+            key-positions = <29 30>;
         };
 
         combo_window_switcher {
@@ -293,12 +293,12 @@
         ARROW {
             bindings = <
 &kp ESCAPE         &kp LG(NUMBER_2)      &kp LG(NUMBER_3)       &kp LG(NUMBER_7)      &kp LG(LS(LEFT_BRACKET))                                   &kp LA(LC(RET))  &kp LA(LC(UP_ARROW))    &kp UP_ARROW    &kp LG(NUMBER_0)         &kp BACKSPACE
-&kp TAB            &kp LG(LA(NUMBER_2))  &kp LG(LA(NUMBER_3))   &kp LG(LA(NUMBER_7))  &kp LG(LS(RIGHT_BRACKET))  &trans          &window_slide2  &kp LG(EQUAL)    &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp LEFT_BRACKET
-&kp LC(LA(LG(F)))  &trans                &kp LS(LA(LC(LG(C))))  &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)      &kp LG(N5)      &window_slide   &kp LG(MINUS)    &kp LA(LC(LEFT_ARROW))  &kp LA(LC(R))   &kp LA(LC(RIGHT_ARROW))  &kp RIGHT_BRACKET
+&kp TAB            &kp LG(LA(NUMBER_2))  &kp LG(LA(NUMBER_3))   &kp LG(LA(NUMBER_7))  &kp LG(LS(RIGHT_BRACKET))  &trans          &window_slide2  &kp LG(EQUAL)    &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp LS(SEMI)
+&kp LC(LA(LG(F)))  &trans                &kp LS(LA(LC(LG(C))))  &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)      &kp LG(N5)      &window_slide   &kp LG(MINUS)    &kp LA(LC(LEFT_ARROW))  &kp LA(LC(R))   &kp LA(LC(RIGHT_ARROW))  &kp SEMI
 &trans             &trans                &trans                 &trans                &Raycast                   &trans          &trans          &trans                                                                            &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
+            sensor-bindings = <&inc_dec_kp LC(LEFT_BRACKET) LC(RIGHT_BRACKET)>;
         };
 
         layer_4 {

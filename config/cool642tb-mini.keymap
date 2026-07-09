@@ -88,7 +88,7 @@
 
         raycast {
             bindings = <&Raycast>;
-            key-positions = <29 30>;
+            key-positions = <17 18>;
         };
 
         combo_window_switcher {

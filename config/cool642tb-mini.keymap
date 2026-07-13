@@ -53,7 +53,7 @@
 
         backspace {
             bindings = <&kp BACKSPACE>;
-            key-positions = <8 7>;
+            key-positions = <8 9>;
         };
 
         question {
@@ -73,7 +73,7 @@
 
         raycast {
             bindings = <&Raycast>;
-            key-positions = <8 9>;
+            key-positions = <8 7>;
         };
     };
 
@@ -272,10 +272,10 @@
 
         ARROW {
             bindings = <
-&kp ESCAPE         &kp LG(NUMBER_2)      &kp LG(NUMBER_3)       &kp LG(NUMBER_7)      &kp LG(LS(LEFT_BRACKET))                                   &kp LA(LC(RET))  &kp LA(LC(UP_ARROW))    &kp UP_ARROW    &kp LG(NUMBER_0)         &kp BACKSPACE
-&kp TAB            &kp LG(LA(NUMBER_2))  &kp LG(LA(NUMBER_3))   &kp LG(LA(NUMBER_7))  &kp LG(LS(RIGHT_BRACKET))  &trans          &window_slide2  &kp LG(EQUAL)    &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp LS(SEMI)
-&kp LC(LA(LG(F)))  &trans                &kp LS(LA(LC(LG(C))))  &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)      &kp LG(N5)      &window_slide   &kp LG(MINUS)    &kp LA(LC(LEFT_ARROW))  &kp LA(LC(R))   &kp LA(LC(RIGHT_ARROW))  &kp SEMI
-&trans             &trans                &trans                 &trans                &trans                     &trans          &trans          &trans                                                                            &trans
+&kp ESCAPE         &kp LG(NUMBER_2)      &kp LG(NUMBER_3)      &kp LG(NUMBER_7)      &kp LG(LS(LEFT_BRACKET))                                   &kp LA(LC(RET))  &kp LA(LC(UP_ARROW))    &kp UP_ARROW    &kp LG(NUMBER_0)         &kp BACKSPACE
+&kp TAB            &kp LG(LA(NUMBER_2))  &kp LG(LA(NUMBER_3))  &kp LG(LA(NUMBER_7))  &kp LG(LS(RIGHT_BRACKET))  &trans          &window_slide2  &kp LG(EQUAL)    &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp LS(SEMI)
+&kp LC(LA(LG(F)))  &trans                &kp LA(LC(LG(C)))     &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)      &kp LG(N5)      &window_slide   &kp LG(MINUS)    &kp LA(LC(LEFT_ARROW))  &kp LA(LC(R))   &kp LA(LC(RIGHT_ARROW))  &kp SEMI
+&trans             &trans                &trans                &trans                &trans                     &trans          &trans          &trans                                                                            &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LEFT_BRACKET RIGHT_BRACKET>;

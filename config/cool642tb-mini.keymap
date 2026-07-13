@@ -51,19 +51,9 @@
             key-positions = <12 11>;
         };
 
-        kakko1 {
-            bindings = <&myKakko1>;
-            key-positions = <7 6>;
-        };
-
-        kakko2 {
-            bindings = <&myKakko2>;
-            key-positions = <7 8>;
-        };
-
-        kakko3 {
+        backspace {
             bindings = <&kp BACKSPACE>;
-            key-positions = <8 9>;
+            key-positions = <8 7>;
         };
 
         question {
@@ -76,11 +66,6 @@
             key-positions = <30 31>;
         };
 
-        semicoron {
-            bindings = <&kp LS(SEMI)>;
-            key-positions = <>;
-        };
-
         sana {
             bindings = <&kp LA(SPACE)>;
             key-positions = <24 23>;
@@ -88,12 +73,7 @@
 
         raycast {
             bindings = <&Raycast>;
-            key-positions = <17 18>;
-        };
-
-        combo_window_switcher {
-            bindings = <&alt_tab_stay>;
-            key-positions = <>;
+            key-positions = <8 9>;
         };
     };
 
@@ -263,10 +243,10 @@
 
         default_layer {
             bindings = <
-&kp Q               &kp W   &kp E      &kp R         &kp T                                      &kp Y            &kp U  &kp I    &kp O      &kp P
-&a_mt LCTRL A       &kp S   &kp D      &lt 2 F       &kp G         &kp K_MUTE      &mo 6        &kp H            &kp J  &lt 5 K  &kp L      &kp RET
-&z_mt LEFT_SHIFT Z  &kp X   &kp C      &kp V         &kp B         &kp F20         &mo 4        &kp SEMICOLON    &kp N  &kp M    &kp COMMA  &mt RSHIFT PERIOD
-&kp LEFT_SHIFT      &trans  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &kp SPACE       &lt 2 MINUS  &spc_lt 3 SPACE                             &kp ESCAPE
+&kp Q               &kp W  &kp E      &kp R         &kp T                                      &kp Y            &kp U  &kp I    &kp O      &kp P
+&a_mt LCTRL A       &kp S  &kp D      &lt 2 F       &kp G         &kp K_MUTE      &mo 6        &kp H            &kp J  &lt 5 K  &kp L      &kp RET
+&z_mt LEFT_SHIFT Z  &kp X  &kp C      &kp V         &kp B         &kp F20         &mo 4        &kp SEMICOLON    &kp N  &kp M    &kp COMMA  &mt RSHIFT PERIOD
+&kp LEFT_SHIFT      &mo 4  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &kp SPACE       &lt 2 MINUS  &spc_lt 3 SPACE                             &kp ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -295,18 +275,18 @@
 &kp ESCAPE         &kp LG(NUMBER_2)      &kp LG(NUMBER_3)       &kp LG(NUMBER_7)      &kp LG(LS(LEFT_BRACKET))                                   &kp LA(LC(RET))  &kp LA(LC(UP_ARROW))    &kp UP_ARROW    &kp LG(NUMBER_0)         &kp BACKSPACE
 &kp TAB            &kp LG(LA(NUMBER_2))  &kp LG(LA(NUMBER_3))   &kp LG(LA(NUMBER_7))  &kp LG(LS(RIGHT_BRACKET))  &trans          &window_slide2  &kp LG(EQUAL)    &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp LS(SEMI)
 &kp LC(LA(LG(F)))  &trans                &kp LS(LA(LC(LG(C))))  &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)      &kp LG(N5)      &window_slide   &kp LG(MINUS)    &kp LA(LC(LEFT_ARROW))  &kp LA(LC(R))   &kp LA(LC(RIGHT_ARROW))  &kp SEMI
-&trans             &trans                &trans                 &trans                &Raycast                   &trans          &trans          &trans                                                                            &trans
+&trans             &trans                &trans                 &trans                &trans                     &trans          &trans          &trans                                                                            &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(LEFT_BRACKET) LC(RIGHT_BRACKET)>;
+            sensor-bindings = <&inc_dec_kp LEFT_BRACKET RIGHT_BRACKET>;
         };
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &kp F11  &kp F12                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans   &trans   &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans   &trans   &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans   &trans   &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &kp F11  &kp F12                      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp TILDE
+&trans  &trans  &trans  &trans   &trans   &trans      &trans  &trans                &trans                 &trans            &trans             &trans
+&trans  &trans  &trans  &trans   &trans   &trans      &trans  &trans                &trans                 &trans            &trans             &trans
+&trans  &trans  &trans  &trans   &trans   &trans      &trans  &trans                                                                            &trans
             >;
         };
 

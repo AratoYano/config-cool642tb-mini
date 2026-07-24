@@ -75,6 +75,16 @@
             bindings = <&Raycast>;
             key-positions = <8 7>;
         };
+
+        exclamation {
+            bindings = <&kp EXCLAMATION>;
+            key-positions = <0 1>;
+        };
+
+        paste {
+            bindings = <&kp LC(LG(V))>;
+            key-positions = <1 2>;
+        };
     };
 
     behaviors {

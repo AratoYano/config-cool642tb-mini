@@ -82,7 +82,7 @@
         };
 
         paste {
-            bindings = <&kp LC(LG(V))>;
+            bindings = <&kp LS(SPACE)>;
             key-positions = <1 2>;
         };
     };
